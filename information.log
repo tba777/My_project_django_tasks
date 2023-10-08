@@ -1,0 +1,11 @@
+{"message": "Hello from Django", "timestamp": "2023-09-24T12:58:52.714955Z", "level": "INFO"}
+{"message": "user admin in sistem", "timestamp": "2023-09-24T14:21:34.541064Z", "level": "INFO"}
+{"message": "user exit the sistem", "timestamp": "2023-09-24T14:23:22.058973Z", "level": "INFO"}
+{"message": "user admin in sistem", "timestamp": "2023-09-24T14:27:13.973103Z", "level": "INFO"}
+{"message": "user  exit the sistem", "timestamp": "2023-09-24T14:27:15.604369Z", "level": "INFO"}
+{"message": "user admin in sistem", "timestamp": "2023-09-24T14:28:15.070009Z", "level": "INFO"}
+{"message": "user admin exit the sistem", "timestamp": "2023-09-24T14:28:18.740315Z", "level": "INFO"}
+{"message": "new user: Bil is registered ", "timestamp": "2023-09-24T14:32:13.803364Z", "level": "INFO"}
+{"message": "user: Bil exit the sistem", "timestamp": "2023-09-24T14:37:56.688518Z", "level": "INFO"}
+{"message": "user admin in sistem", "timestamp": "2023-09-24T16:33:27.969639Z", "level": "INFO"}
+{"message": "user admin in sistem", "timestamp": "2023-09-28T11:23:22.467717Z", "level": "INFO"}
