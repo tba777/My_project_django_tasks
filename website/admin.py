@@ -4,7 +4,7 @@ from .models import CustomUser, Task, TaskType, Note, NoteImage
 
 
 class CustomUserAdmin(UserAdmin):
-    model = CustomUser
+    model = CustomUser    # type: ignore
 
 
 admin.site.register(CustomUser, CustomUserAdmin)

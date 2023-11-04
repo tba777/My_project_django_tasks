@@ -22,13 +22,12 @@ from website.views import *
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('website.urls')),  # Обновите импорт для website_1.urls
+    path("admin/", admin.site.urls),
+    path("", include("website.urls")),  # Обновите импорт для website_1.urls
 ]
 
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)   # type: ignore
 
 handler404 = pageNotFound
-

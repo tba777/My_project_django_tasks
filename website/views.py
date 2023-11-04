@@ -4,58 +4,60 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
 import logging
+
 # Create your views here.
 
 
-logger = logging.getLogger('main')
+logger = logging.getLogger("main")
 
 
 def pageNotFound(request, exception):
-    return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+    return HttpResponseNotFound("<h1>Страница не найдена</h1>")
+
 
 def home_page(request):
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST["username"]
+        password = request.POST["password"]
 
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             messages.success(request, "You Have Been Logged In")
             # logger.info(f'user {username} in sistem')
-            return redirect('home')
+            return redirect("home")
         else:
-            messages.success(request, "There Was An Error Logging In, Please Try Again...")
-            return redirect('home')
+            messages.success(
+                request, "There Was An Error Logging In, Please Try Again..."
+            )
+            return redirect("home")
     else:
-        return render(request, 'home.html', {})
+        return render(request, "home.html", {})
 
 
 def logout_user(request):
     username = request.user.username
     logout(request)
     messages.success(request, "You Have Been Logged Out...")
-    logger.info(f'user: {username} exit the sistem')
-    return redirect('home')
-
-
+    logger.info(f"user: {username} exit the sistem")
+    return redirect("home")
 
 
 def register_user(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             # Аутентификация я регистрация
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password1"]
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request, "You Have Successfully Registered! Welcome!!!")
-            logger.info(f'new user: {username} is registered ')
-            return redirect('home')
+            logger.info(f"new user: {username} is registered ")
+            return redirect("home")
     else:
         form = SignUpForm()
-        return render(request, 'register.html', {'form': form})
+        return render(request, "register.html", {"form": form})
 
-    return render(request, 'register.html', {'form': form})
+    return render(request, "register.html", {"form": form})
