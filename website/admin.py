@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser, Task, TaskType, Note, NoteImage
+
+from .models import CustomUser, Note, NoteImage, Task, TaskType
 
 
 class CustomUserAdmin(UserAdmin):

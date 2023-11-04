@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
 
+from . import views
 
 # app_name = 'website'  # Это добавьте для уточнения пространства имен приложения Но я убрал чтоб не давало ошибку
 

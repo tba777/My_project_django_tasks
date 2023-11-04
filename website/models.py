@@ -1,15 +1,10 @@
-from django.contrib.auth.base_user import AbstractBaseUser
-from django.contrib.auth.models import PermissionsMixin
-
-from django.core.validators import MinValueValidator, MaxValueValidator
-from django.contrib.auth.models import AbstractUser
-from django.db import models
-
 import os
 
-from django.contrib.auth.models import User
-
 from django.conf import settings
+from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import AbstractUser, PermissionsMixin, User
+from django.core.validators import MaxValueValidator, MinValueValidator
+from django.db import models
 
 
 # Функция для генерации пути для изображения
